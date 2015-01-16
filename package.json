@@ -1,0 +1,13 @@
+{
+  "name": "ep_bookmark",
+  "version": "1.0.0",
+  "description": "Etherpad plugin for users to save a list of bookmarks of their visited pads locally in the browser's local storage",
+  "author": "gared (STEFAN MUELLER) <stefan@stefans-entwicklerecke.de>",
+  "contributors": [],
+  "dependencies": {},
+  "engines": { "node": ">= 0.6.0"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gared/ep_bookmark"
+  }
+}
