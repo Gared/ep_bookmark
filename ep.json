@@ -9,7 +9,8 @@
 	    },
       "client_hooks": {
         "documentReady": "ep_bookmark/static/js/index",
-        "postAceInit": "ep_bookmark/static/js/index"
+        "postAceInit": "ep_bookmark/static/js/index",
+        "postToolbarInit": "ep_bookmark/static/js/index"
       }
     }
   ]

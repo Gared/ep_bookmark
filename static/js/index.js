@@ -302,13 +302,10 @@ var removePadClick = function() {
 }
 
 var documentReady = function (hook, context) {
-  $("#managePadBookmarks").click(function () {
+  $("#managePadBookmarks a").click(function () {
     var module = $("#padBookmarkManager");
 
-    if (module.css('display') != "none") {
-      module.slideUp("fast");
-    } else {
-      module.slideDown("fast");
+    if (module.css('display') == "none") {
       $("#addPadBookmark").val(html10n.get("ep_bookmark.addPadToBookmarks"));
       $("#infoText").attr("title", html10n.get("ep_bookmark.info.title"));
     }
@@ -338,6 +335,11 @@ var postAceInit = function(hook, context) {
   $("#managePadBookmarks").attr('title', html10n.get("ep_bookmark.bookmarkTitle"));
 }
 
+var postToolbarInit = function(hook, context) {
+  context.toolbar.registerDropdownCommand("padBookmarkManager");
+}
+
 // Export hook functions
 exports.documentReady = documentReady;
 exports.postAceInit = postAceInit;
+exports.postToolbarInit = postToolbarInit;
