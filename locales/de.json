@@ -7,10 +7,11 @@
 "ep_bookmark.cancel": "Abbrechen",
 "ep_bookmark.editIcon.title": "Bearbeite den Kommentar für dieses Lesezeichen",
 "ep_bookmark.saveIcon.title": "Speichere den Kommentar für dieses Lesezeichen",
-"ep_bookmark.closeIcon.title": "Breche das Editieren des Kommentares ab",
+"ep_bookmark.closeIcon.title": "Breche das Editieren des Kommentars ab",
 "ep_bookmark.deleteIcon.title": "Lösche dieses Lesezeichen",
 "ep_bookmark.autoAdded": "automatisch hinzugefügt",
 "ep_bookmark.lastVisit": "Letzter Besuch",
 "ep_bookmark.info": "Info",
-"ep_bookmark.info.title": "Hier können Lesezeichen der Pads dieses Servers gespeichert werden. Diese werden nur in diesem Browser gespeichert. Die Anzeige der Pads ist sortiert nach dem zuletzt Besuchten"
+"ep_bookmark.info.title": "Hier können Lesezeichen der Pads dieses Servers gespeichert werden. Diese werden nur in diesem Browser gespeichert. Die Anzeige der Pads ist sortiert nach dem letzten Besuch.",
+"ep_bookmark.notSupported": "Dein Browser unterstützt das Speichern von Lesezeichen nicht."
 }
