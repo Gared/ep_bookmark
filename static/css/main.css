@@ -29,12 +29,13 @@
 
 div.padBookmark > span.comment {
   color: grey;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 div.padBookmark > input.editComment {
   display: none;
-  font-size: 11px;
+  font-size: 14px;
+  width: 20em;
 }
 
 .editIcon, .closeIcon, .deleteIcon, .saveIcon {

@@ -1,8 +1,7 @@
 /**
  * Refreshs the overlay for the pad bookmark list and its content
  */
-var refreshPadList = function() {
-  var bookmarks = bookmarkStorage.getAllPadBookmarks();
+var refreshPadList = function(bookmarks) {
   var padDiv;
   var padLinkTag;
   var commentTag;
@@ -10,17 +9,22 @@ var refreshPadList = function() {
   var editTag;
   var saveTag;
   var closeTag;
+  var deleteTag;
+  
+  console.log(html10n.get("ep_bookmark.searchPlaceholder"));
+  $('#bookmarkSearchInput').attr('placeholder', html10n.get("ep_bookmark.searchPlaceholder") + " 🔍");
   
   $("#padBookmarkList").empty();
-  if (bookmarks.length == 0) {
+  if (bookmarks.length === 0) {
     $("#padBookmarkList").append("<div id='noPads'></div>").text(html10n.get("ep_bookmark.noPads"));
   } else {
+
     for (var i=0; i < bookmarks.length; i++) {
       padDiv = $("<div/>").attr('class', 'padBookmark').attr('id', bookmarks[i].padId);
       padLinkTag = $("<a class='bookmarkPadId' href='javascript:pad.switchToPad(\""+bookmarks[i].padId+"\")'>"+bookmarks[i].padId+"</a>").attr('title', html10n.get("ep_bookmark.lastVisit")+': '+new Date(bookmarks[i].timestamp).toLocaleString());
-      commentTag = $("<span/>").attr('class', 'comment').text(bookmarks[i].description);
-      commentEditTag = $("<input/>").attr('class', 'editComment');
-      editTag = $("<a class='editIcon' href='#'>&#9997;</a>'").click(editCommentClick);
+      commentTag = $('<span class="comment"/>').text(bookmarks[i].description);
+      commentEditTag = $('<input class="editComment" placeholder="🗒"/>');
+      editTag = $("<a class='editIcon' href='#'>&#128393;</a>'").click(editCommentClick);
       saveTag = $("<a class='saveIcon' href='#'>&#10003;</a>'").click(saveCommentClick);
       closeTag = $("<a class='closeIcon' href='#'>&#10007;</a>'").click(closeCommentClick);
       deleteTag = $("<a class='deleteIcon' href='#'>&#10006;</a>").click(removePadClick);
@@ -35,10 +39,10 @@ var refreshPadList = function() {
     
     $(".editComment").keyup(function(e){
       // ESC pressed
-      if (e.keyCode == 27){
+      if (e.keyCode === 27){
         abortCommentEditing($(e.currentTarget).parent());
         // Enter pressed
-      } else if (e.keyCode == 13) {
+      } else if (e.keyCode === 13) {
         saveComment($(e.currentTarget).parent());
       }
     });
@@ -117,7 +121,7 @@ var bookmarkStorage = {
       bookmarkAdded = false;
       for (var k=0; k < sortedBookmarks.length; k++) {
         if (bookmarks[i].timestamp > sortedBookmarks[k].timestamp) {
-          if (k == 0) {
+          if (k === 0) {
             // Add bookmark on first position
             sortedBookmarks.unshift(bookmarks[i]);
           } else {
@@ -127,7 +131,7 @@ var bookmarkStorage = {
           bookmarkAdded = true;
         }
       }
-      if (bookmarkAdded == false) {
+      if (bookmarkAdded === false) {
         sortedBookmarks.push(bookmarks[i]);
       }
     }
@@ -136,7 +140,7 @@ var bookmarkStorage = {
   getPadBookmark: function(padId) {
     var bookmarks = bookmarkStorage.getLocalStorageItem().padList;
     for (var i=0; i < bookmarks.length; i++) {
-      if (bookmarks[i].padId == padId) {
+      if (bookmarks[i].padId === padId) {
         return bookmarks[i];
       }
     }
@@ -146,14 +150,14 @@ var bookmarkStorage = {
     var localStorageItem = bookmarkStorage.getLocalStorageItem();
     var bookmarks = localStorageItem.padList;
     for (var i=0; i < bookmarks.length; i++) {
-      if (bookmarks[i].padId == bookmark.padId) {
+      if (bookmarks[i].padId === bookmark.padId) {
         bookmarks[i] = bookmark;
       }
     }
     bookmarkStorage.saveLocalStorageItem(localStorageItem);
   },
   padBookmarkExists: function(padId) {
-    return bookmarkStorage.getPadBookmark(padId) == null ? false : true;
+    return bookmarkStorage.getPadBookmark(padId) !== null;
   },
   saveLocalStorageItem: function(storageItem) {
     try {
@@ -168,20 +172,20 @@ var bookmarkStorage = {
       var bookmarks = localStorageItem.padList;
       bookmarks.push({padId: padId, description: (desc || ''), timestamp: new Date()});
       bookmarkStorage.saveLocalStorageItem(localStorageItem);
-      refreshPadList();
+      refreshPadList(bookmarkStorage.getAllPadBookmarks());
     }
   },
   removePad: function(padId) {
     var localStorageItem = bookmarkStorage.getLocalStorageItem();
     var bookmarks = localStorageItem.padList;
     for (var i=0; i < bookmarks.length; i++) {
-      if (bookmarks[i].padId == padId) {
+      if (bookmarks[i].padId === padId) {
         bookmarks.splice(i, 1);
         break;
       }
     }
     bookmarkStorage.saveLocalStorageItem(localStorageItem);
-    refreshPadList();
+    refreshPadList(bookmarkStorage.getAllPadBookmarks());
   },
   setOption: function(name, value) {
     var localStorageItem = bookmarkStorage.getLocalStorageItem();
@@ -313,10 +317,11 @@ var removePadClick = function() {
 }
 
 var documentReady = function (hook, context) {
+
   $("#managePadBookmarks a").click(function () {
     var module = $("#padBookmarkManager");
 
-    if (module.css('display') == "none") {
+    if (module.css('display') === "none") {
       $("#addPadBookmark").val(html10n.get("ep_bookmark.addPadToBookmarks"));
       $("#infoText").attr("title", html10n.get("ep_bookmark.info.title"));
       $("#addBookmarksAutomatically").attr('title', html10n.get("ep_bookmark.addBookmarksAutomatically.title"));
@@ -327,7 +332,7 @@ var documentReady = function (hook, context) {
         $("#padBookmarkError").hide();
         $("#autoAddBookmarkCheckbox").attr('checked', bookmarkStorage.getOption("addBookmarksAutomatically"));
         $("#addPadBookmark").attr('disabled', $("#autoAddBookmarkCheckbox").attr('checked'));
-        refreshPadList();
+        refreshPadList(bookmarkStorage.getAllPadBookmarks());
       } else {
         $("#padBookmarkMain").hide();
         $("#padBookmarkError").show();
@@ -342,7 +347,19 @@ var documentReady = function (hook, context) {
   $("#autoAddBookmarkCheckbox").change(function() {
     bookmarkStorage.setOption("addBookmarksAutomatically", $(this).is(":checked"));
     $("#addPadBookmark").attr('disabled', $(this).is(":checked"));
+    autoAddBookmark();
   });
+
+  $('#bookmarkSearchInput').on('input', function () {
+    var text = $('#bookmarkSearchInput').val().toUpperCase();
+    var bookmarks = bookmarkStorage.getAllPadBookmarks();
+
+    var filteredBookmarks = bookmarks.filter(function (bookmark) {
+      return bookmark.padId.toUpperCase().indexOf(text) > -1 ||
+        bookmark.description.toUpperCase().indexOf(text) > -1;
+    });
+    refreshPadList(filteredBookmarks);
+  })
 }
 
 var postAceInit = function(hook, context) {

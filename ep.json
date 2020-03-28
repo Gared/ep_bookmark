@@ -6,7 +6,7 @@
         "eejsBlock_editbarMenuRight": "ep_bookmark/hooks:eejsBlock_editbarMenuRight",
         "eejsBlock_styles": "ep_bookmark/hooks:eejsBlock_styles",
         "eejsBlock_body": "ep_bookmark/hooks:eejsBlock_body"
-	    },
+      },
       "client_hooks": {
         "documentReady": "ep_bookmark/static/js/index",
         "postAceInit": "ep_bookmark/static/js/index",
