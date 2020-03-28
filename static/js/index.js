@@ -10,8 +10,7 @@ var refreshPadList = function(bookmarks) {
   var saveTag;
   var closeTag;
   var deleteTag;
-  
-  console.log(html10n.get("ep_bookmark.searchPlaceholder"));
+
   $('#bookmarkSearchInput').attr('placeholder', html10n.get("ep_bookmark.searchPlaceholder") + " 🔍");
   
   $("#padBookmarkList").empty();
