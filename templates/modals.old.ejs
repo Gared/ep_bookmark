@@ -1,0 +1,28 @@
+<div id="padBookmarkManager" style="display: none;" class="popup">
+    <% e.begin_block("padBookmarkManager"); %>
+    <div class="popup-content">
+        <h1 data-l10n-id="ep_bookmark.bookmarkTitle">Manage your pad bookmarks</h1>
+        <a href="https://github.com/Gared/ep_bookmark/wiki" target="_blank" id="infoText" data-l10n-id="ep_bookmark.info">Info</a>
+        
+        <span id="padBookmarkError" data-l10n-id="ep_bookmark.notSupported">Your browser does not support saving of bookmarks.</span>
+        
+        <div id="padBookmarkMain">
+            <div>
+                <input id="bookmarkSearchInput" type="text"/>
+            </div>
+            <div id="padBookmarkList">
+            
+            </div>
+            <br/>
+            <div>
+                <input id="autoAddBookmarkCheckbox" type="checkbox"/>
+                <span id="addBookmarksAutomatically" data-l10n-id="ep_bookmark.addBookmarksAutomatically">Add bookmarks automatically</span>
+            </div>
+            <br/>
+            <div>
+                <input type="button" class="embedMediaButton" id="addPadBookmark" data-l10n-id="ep_bookmark.addPadToBookmarks" value="Add this pad to bookmarks">
+            </div>
+        </div>
+    </div>
+    <% e.end_block(); %>
+</div>

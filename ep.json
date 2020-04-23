@@ -5,7 +5,8 @@
       "hooks": {
         "eejsBlock_editbarMenuRight": "ep_bookmark/hooks:eejsBlock_editbarMenuRight",
         "eejsBlock_styles": "ep_bookmark/hooks:eejsBlock_styles",
-        "eejsBlock_body": "ep_bookmark/hooks:eejsBlock_body"
+        "eejsBlock_body": "ep_bookmark/hooks:eejsBlock_body",
+        "eejsBlock_editorContainerBox": "ep_bookmark/hooks:eejsBlock_editorContainerBox"
       },
       "client_hooks": {
         "documentReady": "ep_bookmark/static/js/index",
