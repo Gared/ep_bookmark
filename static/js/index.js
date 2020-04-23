@@ -318,24 +318,20 @@ var removePadClick = function() {
 var documentReady = function (hook, context) {
 
   $("#managePadBookmarks a").click(function () {
-    var module = $("#padBookmarkManager");
+    $("#addPadBookmark").val(html10n.get("ep_bookmark.addPadToBookmarks"));
+    $("#infoText").attr("title", html10n.get("ep_bookmark.info.title"));
+    $("#addBookmarksAutomatically").attr('title', html10n.get("ep_bookmark.addBookmarksAutomatically.title"));
+    $("#managePadBookmarks").attr('title', html10n.get("ep_bookmark.bookmarkTitle"));
 
-    if (module.css('display') === "none") {
-      $("#addPadBookmark").val(html10n.get("ep_bookmark.addPadToBookmarks"));
-      $("#infoText").attr("title", html10n.get("ep_bookmark.info.title"));
-      $("#addBookmarksAutomatically").attr('title', html10n.get("ep_bookmark.addBookmarksAutomatically.title"));
-      $("#managePadBookmarks").attr('title', html10n.get("ep_bookmark.bookmarkTitle"));
-      
-      if (bookmarkStorage.supported()) {
-        $("#padBookmarkMain").show();
-        $("#padBookmarkError").hide();
-        $("#autoAddBookmarkCheckbox").attr('checked', bookmarkStorage.getOption("addBookmarksAutomatically"));
-        $("#addPadBookmark").attr('disabled', $("#autoAddBookmarkCheckbox").attr('checked'));
-        refreshPadList(bookmarkStorage.getAllPadBookmarks());
-      } else {
-        $("#padBookmarkMain").hide();
-        $("#padBookmarkError").show();
-      }
+    if (bookmarkStorage.supported()) {
+      $("#padBookmarkMain").show();
+      $("#padBookmarkError").hide();
+      $("#autoAddBookmarkCheckbox").attr('checked', bookmarkStorage.getOption("addBookmarksAutomatically"));
+      $("#addPadBookmark").attr('disabled', $("#autoAddBookmarkCheckbox").attr('checked'));
+      refreshPadList(bookmarkStorage.getAllPadBookmarks());
+    } else {
+      $("#padBookmarkMain").hide();
+      $("#padBookmarkError").show();
     }
   });
 

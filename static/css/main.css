@@ -1,13 +1,12 @@
 #padBookmarkManager {
   position: absolute;
-  top: 36px;
-  right: 20px;
-  display: none;
+  top: 10px;
+  right: 30px;
   z-index:999999;
 }
 
 #padBookmarkList {
-  max-height: 100px;
+  max-height: 500px;
   overflow: auto;
   border: 1px solid black;
   padding: 5px;
@@ -60,7 +59,6 @@ div.padBookmark > input.editComment {
 
 #infoText {
   color: blue;
-  position: absolute;
   right: 10px;
   top: 8px;
 }
