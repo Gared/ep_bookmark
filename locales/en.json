@@ -14,5 +14,5 @@
   "ep_bookmark.info": "Info",
   "ep_bookmark.info.title": "Here you can save a list of your pads on this server. The list is only stored in your browser and is ordered beginning with the latest visited pad.",
   "ep_bookmark.notSupported": "Your browser does not support saving of bookmarks.",
-  "ep_bookmark.searchPlaceholder": "Search for padssssssss"
+  "ep_bookmark.searchPlaceholder": "Search for pads"
 }
