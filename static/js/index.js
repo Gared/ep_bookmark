@@ -20,7 +20,7 @@ var refreshPadList = function(bookmarks) {
 
     for (var i=0; i < bookmarks.length; i++) {
       padDiv = $("<div/>").attr('class', 'padBookmark').attr('id', bookmarks[i].padId);
-      padLinkTag = $("<a class='bookmarkPadId' href='javascript:pad.switchToPad(\""+bookmarks[i].padId+"\")'>"+bookmarks[i].padId+"</a>").attr('title', html10n.get("ep_bookmark.lastVisit")+': '+new Date(bookmarks[i].timestamp).toLocaleString());
+      padLinkTag = $("<a class='bookmarkPadId' href='javascript:window.location.href = \"./"+bookmarks[i].padId+"\"'>"+bookmarks[i].padId+"</a>").attr('title', html10n.get("ep_bookmark.lastVisit")+': '+new Date(bookmarks[i].timestamp).toLocaleString());
       commentTag = $('<span class="comment"/>').text(bookmarks[i].description);
       commentEditTag = $('<input class="editComment" placeholder="🗒"/>');
       editTag = $("<a class='editIcon' href='#'>&#128393;</a>'").click(editCommentClick);
