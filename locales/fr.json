@@ -1,0 +1,18 @@
+{
+  "ep_bookmark.bookmarkTitle": "Gérer vos marques-pages",
+  "ep_bookmark.noPads": "Pas de pads",
+  "ep_bookmark.addBookmarksAutomatically": "Ajouter les marques-pages automatiquement",
+  "ep_bookmark.addBookmarksAutomatically.title": "Si vous ouvrez un pad, il sera automatiquement ajouter à vos marques-pages",
+  "ep_bookmark.addPadToBookmarks": "Ajouter ce pad à vos marques-pages",
+  "ep_bookmark.cancel": "Annuler",
+  "ep_bookmark.editIcon.title": "Éditer les commentaire pour ce marque-page",
+  "ep_bookmark.saveIcon.title": "Sauvegarder le commentaire pour ce marque-page",
+  "ep_bookmark.closeIcon.title": "Annuler l'édition de ce commentaire",
+  "ep_bookmark.deleteIcon.title": "Supprimer ce marque-page",
+  "ep_bookmark.autoAdded": "Ajouter automatiquement",
+  "ep_bookmark.lastVisit": "Dernière visite",
+  "ep_bookmark.info": "Info",
+  "ep_bookmark.info.title": "Ici, vous pouvez sauvegarder une liste de vos pads sur ce serveur. Cette liste est seulement stockée dans votre navigateur et est classée en commençant par le pad dernièrement visité.",
+  "ep_bookmark.notSupported": "Votre navigateur ne support pas la sauvegarde des marques-pages.",
+  "ep_bookmark.searchPlaceholder": "Chercher des pads"
+}
