@@ -69,3 +69,6 @@ div.padBookmark > input.editComment {
   top: 8px;
 }
 
+#addPadBookmark {
+  background-color: var(--primary-color);
+}
