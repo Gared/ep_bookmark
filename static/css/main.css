@@ -13,12 +13,6 @@
   margin: 5px;
 }
 
-#autoAddBookmarkCheckbox {
-  position: relative;
-  opacity: 1;
-  pointer-events: initial;
-}
-
 .bookmarkPadId {
   font-size: 15px;
   font-weight: bold;
