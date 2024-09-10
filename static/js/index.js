@@ -11,7 +11,8 @@ var refreshPadList = function(bookmarks) {
   var closeTag;
   var deleteTag;
 
-  $('#bookmarkSearchInput').attr('placeholder', html10n.get("ep_bookmark.searchPlaceholder") + " 🔍");
+  var searchPlaceholderText = html10n.get("ep_bookmark.searchPlaceholder") || 'Search for pads';
+  $('#bookmarkSearchInput').attr('placeholder', searchPlaceholderText + " 🔍");
   
   $("#padBookmarkList").empty();
   if (bookmarks.length === 0) {
@@ -24,9 +25,9 @@ var refreshPadList = function(bookmarks) {
       commentTag = $('<span class="comment"/>').text(bookmarks[i].description);
       commentEditTag = $('<input class="editComment" placeholder="🗒"/>');
       editTag = $("<a class='editIcon' href='#'>&#128393;</a>'").click(editCommentClick);
-      saveTag = $("<a class='saveIcon' href='#'>&#10003;</a>'").click(saveCommentClick);
+      saveTag = $("<a class='saveIcon' href='#'>💾</a>'").click(saveCommentClick);
       closeTag = $("<a class='closeIcon' href='#'>&#10007;</a>'").click(closeCommentClick);
-      deleteTag = $("<a class='deleteIcon' href='#'>&#10006;</a>").click(removePadClick);
+      deleteTag = $("<a class='deleteIcon' href='#'>🗑</a>").click(removePadClick);
         
       padDiv.append(padLinkTag).append(" ").append(commentTag).append(commentEditTag).append(" ").append(editTag).append(saveTag).append(closeTag).append(deleteTag);
       $("#padBookmarkList").append(padDiv);
