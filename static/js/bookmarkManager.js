@@ -16,7 +16,7 @@ var refreshPadList = function(bookmarks) {
 
   $("#padBookmarkList").empty();
   if (bookmarks.length === 0) {
-    $("#padBookmarkList").append("<div id='noPads'></div>").text(html10n.get("ep_bookmark.noPads"));
+    $("#padBookmarkList").append("<div id='noPads'></div>").text(html10n.get("ep_bookmark.noPads") || 'No pads');
   } else {
 
     var baseUrl = './';
