@@ -1,5 +1,6 @@
 {
   "ep_bookmark.bookmarkTitle": "Manage your pad bookmarks",
+  "ep_bookmark.index.title": "Pad bookmarks",
   "ep_bookmark.noPads": "No pads",
   "ep_bookmark.addBookmarksAutomatically": "Add bookmarks automatically",
   "ep_bookmark.addBookmarksAutomatically.title": "If you open a pad it will automatically be added to your bookmarks",

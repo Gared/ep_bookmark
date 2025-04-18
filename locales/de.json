@@ -1,5 +1,6 @@
 {
   "ep_bookmark.bookmarkTitle": "Verwalte die Lesezeichen deiner Pads",
+  "ep_bookmark.index.title": "Pad Lesezeichen",
   "ep_bookmark.noPads": "Keine Pads",
   "ep_bookmark.addBookmarksAutomatically": "Füge neue Pads automatisch hinzu",
   "ep_bookmark.addBookmarksAutomatically.title": "Beim Aufruf von Pads werden diese automatisch zur Lesezeichenliste hinzugefügt",

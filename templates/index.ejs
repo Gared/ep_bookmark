@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/static/plugins/ep_bookmark/static/css/main.css" type="text/css" />
+<script src="/static/plugins/ep_bookmark/static/js/bookmarkManager.js"></script>
+<script type="text/javascript">
+  window.onload = () => {
+    registerSearchInputHandler();
+    refreshPadList(bookmarkStorage.getAllPadBookmarks());
+  };
+</script>
+
+<div id="bookmarkManagerIndex">
+    <div>
+        <h3 data-l10n-id="ep_bookmark.index.title">Pad bookmarks</h3>
+        <a href="https://github.com/Gared/ep_bookmark/wiki" target="_blank" id="infoText" data-l10n-id="ep_bookmark.info">Info</a>
+        <div id="padBookmarkMain">
+            <div>
+                <input id="bookmarkSearchInput" type="text"/>
+            </div>
+            <div id="padBookmarkList"></div>
+        </div>
+    </div>
+</div>
