@@ -5,12 +5,26 @@
   z-index:999999;
 }
 
+#bookmarkManagerIndex {
+  margin: 20px auto 0;
+  width: 350px;
+}
+
+#bookmarkManagerIndex h3 {
+  text-align: center;
+}
+
+#bookmarkSearchInput {
+  position: relative;
+}
+
 #padBookmarkList {
   max-height: 500px;
   overflow: auto;
   border: 1px solid black;
   padding: 5px;
-  margin: 5px;
+  margin: 5px 0;
+  background-color: white;
 }
 
 .bookmarkPadId {

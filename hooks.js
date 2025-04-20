@@ -19,3 +19,13 @@ exports.eejsBlock_styles = function (hook_name, args, cb) {
   args.content = args.content + eejs.require("ep_bookmark/templates/styles.ejs", {}, module);
   return cb();
 }
+
+exports.eejsBlock_scripts = function (hook_name, args, cb) {
+  args.content = args.content + '<script src="/static/plugins/ep_bookmark/static/js/bookmarkManager.js"></script>';
+  return cb();
+}
+
+exports.eejsBlock_indexWrapper = function (hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_bookmark/templates/index.ejs", {});
+  return cb();
+}
